@@ -1,3 +1,59 @@
-<h1>
-  {{title}}
-</h1>
+Font Size <input [(ngModel)]="fontSize">
+
+<div custom size="30" [ngStyle]="{'background-color': 'green'}">Custom Directive</div>
+<div [custom]="color" [size]="fontSize">Custom Directive</div>
+<div custom [size]="fontSize">Custom Directive</div>
+<div custom [size]="fontSize">Custom Directive</div>
+
+
+<button (click)="color='red'">Red</button>
+<button (click)="color='yellow'">Yellow</button>
+<button (click)="color='blue'">Blue</button>
+
+<input type="radio" [(ngModel)]="color" value="red">
+<input type="radio" [(ngModel)]="color" value="blue">
+<input type="radio" [(ngModel)]="color" value="green">
+
+{{color}}
+
+Current Value {{ showSection }}
+
+<button (click)="toggleValue()">Show/Hide</button>
+
+<h2>Ng If</h2>
+<div *ngIf="showSection"> This is Sturcture Directive</div>
+
+<h2>Ng For</h2>
+
+<button (click)="updateCountryList()">Update List</button>
+
+<ol>
+  <li *ngFor="let c of lists">{{ c }}</li>
+</ol>
+
+<h2>Ng Switch</h2>
+
+<input [(ngModel)]="mark">
+<div [ngSwitch]="mark">
+  <div *ngSwitchCase="90">Very Good</div>
+  <div *ngSwitchCase="80">Good</div>
+  <div *ngSwitchCase="70">you got 70</div>
+  <div *ngSwitchCase="60">you got 60</div>
+  <div *ngSwitchDefault>Not match</div>
+</div>
+
+<h2>Ng Class</h2>
+<div [ngClass]="{'red': showSection, 'green': !showSection}">
+  Ng Class Directive Example
+
+</div>
+
+<h2>Ng Style</h2>
+<div [ngStyle]="{'background-color': 'yellow'}">
+  Ng Style Directive Example
+</div>
+
+
+<h2>Attrubute Directive Example [hidden]</h2>
+
+<div [hidden]="showSection"> This is Attribute Directive </div>

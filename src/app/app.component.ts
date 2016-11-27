@@ -7,4 +7,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  color = 'green';
+  fontSize = 12;
+
+  showSection = false;
+
+  lists = [
+      'BD',
+      'US',
+      'UK'
+  ];
+
+  mark = 90;
+
+  toggleValue(){
+    this.showSection = !this.showSection;
+  }
+
+  updateCountryList(){
+    this.lists.pop();
+  }
+
+  setMark(number){
+    this.mark = number;
+  }
 }
